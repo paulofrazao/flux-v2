@@ -1,24 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: colour-gitops
-  namespace: colour-gitops
+  name: k8s-lb-gitops-frontend
+  namespace: k8s-lb
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
   - hosts:
-    - colour.weaveworks.tech
-    secretName: colour-weaveworks-tech-crt
+    - k8s-lb.geshi.ca
+    secretName: k8s-lb-geshi-ca-crt
   rules:
-  - host: colour.weaveworks.tech
+  - host: k8s-lb.geshi.ca
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: git-ops-colour-frontend
+            name: k8s-lb-gitops-frontend
             port:
               number: 80
