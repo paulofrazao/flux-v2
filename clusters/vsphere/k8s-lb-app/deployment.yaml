@@ -22,8 +22,8 @@ spec:
       - name: k8s-lb
         #image: paulofrazao/weaveworks-gitops:0.1
         #image: paulofrazao/launchpad:latest
-        image: paulofrazao/k8s-lb-scaling:yellow
-        #image: paulofrazao/k8s-lb-scaling:red
+        #image: paulofrazao/k8s-lb-scaling:yellow
+        image: paulofrazao/k8s-lb-scaling:red
         #image: paulofrazao/suse-demo-yellow:0.1.0
         resources:
           requests:
